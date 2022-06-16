@@ -1,21 +1,25 @@
 import java.math.BigDecimal;
 
 public class Employee {
-    private final String name;
-    private final String surname;
+    private String name;
+    private String surname;
     private int age;
-    BigDecimal baseSalary;
+    private BigDecimal baseSalary;
     private BigDecimal bonus;
 
     public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
+        int baseSalary=0;
+        int bonus=0;
     }
 
     public Employee(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
+        int baseSalary=0;
+        int bonus=0;
     }
 
     public Employee(String name, String surname, int age, BigDecimal baseSalary) {
@@ -23,10 +27,11 @@ public class Employee {
         this.surname = surname;
         this.age = age;
         this.baseSalary = baseSalary;
+        int bonus=0;
 
     }
 
-    public Employee(String name, int age, BigDecimal baseSalary, BigDecimal bonus, String surname) {
+    public Employee(String name, String surname, int age, BigDecimal baseSalary, BigDecimal bonus) {
         this.name = name;
         this.age = age;
         this.baseSalary = baseSalary;
@@ -42,17 +47,12 @@ public class Employee {
         return "Employee details : " + name + " " + surname + " is " + age;
     }
 
-
-    public BigDecimal getBaseSalaryAndBonus() {
+    public BigDecimal getTotalSalary() {
         return baseSalary.add(bonus);
     }
 
-    public BigDecimal getBaseSalary() {
-        return baseSalary;
-    }
+    public BigDecimal getBaseSalary() {return baseSalary;}
 
-    public BigDecimal getBonus() {
-        return bonus;
-    }
+    public BigDecimal getBonus() {return bonus;}
 
 }
