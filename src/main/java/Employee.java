@@ -10,33 +10,27 @@ public class Employee {
     public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        int baseSalary=0;
-        int bonus=0;
+        this.bonus = BigDecimal.valueOf(0);
+        this.baseSalary = BigDecimal.valueOf(0);
     }
 
     public Employee(String name, String surname, int age) {
-        this.name = name;
-        this.surname = surname;
+        this(name, surname);
         this.age = age;
-        int baseSalary=0;
-        int bonus=0;
+        this.bonus = BigDecimal.valueOf(0);
+        this.baseSalary = BigDecimal.valueOf(0);
     }
 
     public Employee(String name, String surname, int age, BigDecimal baseSalary) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
+        this(name, surname, age);
         this.baseSalary = baseSalary;
-        int bonus=0;
+        this.bonus = BigDecimal.valueOf(0);
 
     }
 
     public Employee(String name, String surname, int age, BigDecimal baseSalary, BigDecimal bonus) {
-        this.name = name;
-        this.age = age;
-        this.baseSalary = baseSalary;
+        this(name, surname, age, baseSalary);
         this.bonus = bonus;
-        this.surname = surname;
     }
 
     public String getEmployeeInfo() {
@@ -51,8 +45,12 @@ public class Employee {
         return baseSalary.add(bonus);
     }
 
-    public BigDecimal getBaseSalary() {return baseSalary;}
+    public BigDecimal getBaseSalary() {
+        return baseSalary;
+    }
 
-    public BigDecimal getBonus() {return bonus;}
+    public BigDecimal getBonus() {
+        return bonus;
+    }
 
 }
